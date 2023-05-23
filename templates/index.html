@@ -1,8 +1,84 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <title>{{ title }} - Myblog</title>
+        {% block head %}
+            <meta charset="utf-8">
+            <title>Joyeux Anniversaire !!</title>
+            <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='gateaux.ico') }}">
+            <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css' ) }}">
+        {% endblock %}
     </head>
-    <body>
-        <h1>Hello, {{ user.username }}!</h1>
+    <body>        
+        <div class="container">
+            <div class="countdown countdown--wide" id="countdown">
+                <div class="countdown__fill" id="ticker"></div>
+                <div class="countdown__digit" id="seconds">00</div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            function Timer(duration, element) {
+                var self = this;
+                this.duration = duration;
+                this.element = element;
+                this.running = false;
+                
+                this.els = {
+                    ticker: document.getElementById('ticker'),
+                    seconds: document.getElementById('seconds'),
+                };
+            }
+
+            Timer.prototype.start = function() {
+                var self = this;
+                var start = null;
+                this.running = true;
+                var remainingSeconds = this.els.seconds.textContent = this.duration / 1000;
+
+                function redirect() {
+                    window.location.href = "/hpbd"
+                }
+                
+                function draw(now) {
+                    if (!start) start = now;
+                    var diff = now - start;
+                    var newSeconds = Math.ceil((self.duration - diff)/1000);
+
+                    if (diff <= self.duration) {
+                        self.els.ticker.style.height = 100 - (diff/self.duration*100) + '%';
+                        
+                        if (newSeconds != remainingSeconds) {
+                            self.els.seconds.textContent = newSeconds;
+                            remainingSeconds = newSeconds;
+                        }
+                        
+                        self.frameReq = window.requestAnimationFrame(draw);
+                    } else {
+                        //self.running = false;
+                        self.els.seconds.textContent = 0;
+                        self.els.ticker.style.height = '0%';
+                        self.element.classList.add('countdown--ended');
+                        setTimeout(redirect, 1000) // Wait a seconds before redirect
+                    }
+                };
+                
+                self.frameReq = window.requestAnimationFrame(draw);
+            }
+
+            Timer.prototype.reset = function() {
+                this.running = false;
+                window.cancelAnimationFrame(this.frameReq);
+                this.els.seconds.textContent = this.duration / 1000;
+                this.els.ticker.style.height = null;
+                this.element.classList.remove('countdown--ended');
+            }
+
+            Timer.prototype.setDuration = function(duration) {
+                this.duration = duration;
+                this.els.seconds.textContent = this.duration / 1000;
+            }
+
+            var timer = new Timer(5000, document.getElementById('countdown'));
+            timer.start();
+        </script>
     </body>
 </html>
