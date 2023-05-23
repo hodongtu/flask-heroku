@@ -35,14 +35,14 @@ body {
   padding: 0;
   margin: 1rem 0 0.5rem;
   color: #6eeb83;
-  font-size: 2rem;
+  font-size: 4rem;
   font-weight: 900;
 }
 
 .challenge-subtitle {
   text-align: center;
   margin: 0;
-  font-size: 1.125rem;
+  font-size: 2rem;
   font-weight: 400;
   color: #117c23;
 }
@@ -76,7 +76,7 @@ body {
   position: relative;
 }
 .hb-container .happy {
-  font-size: 8rem;
+  font-size: 10rem;
   color: white;
   font-weight: 100;
   transform: translateY(85px);
@@ -86,7 +86,7 @@ body {
           animation: showUp 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 .hb-container .twentyseven {
-  font-size: 10rem;
+  font-size: 15rem;
   color: #1f2938;
   font-weight: 900;
   -webkit-animation: blinkColor 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite forwards 0.7s;
@@ -95,7 +95,7 @@ body {
   /*text-align: center;*/
 }
 .hb-container .birthday {
-  font-size: 5.5rem;
+  font-size: 8rem;
   color: white;
   transform: translateY(-85px);
   background-color: #0d1117;
@@ -105,8 +105,8 @@ body {
 }
 .hb-container .ballon {
   position: absolute;
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
   -webkit-animation: idle 6s ease-in-out infinite;
           animation: idle 6s ease-in-out infinite;
 }
@@ -117,7 +117,7 @@ body {
 }
 .hb-container .ballon:nth-of-type(1) {
   top: -150px;
-  left: -150px;
+  left: -130px;
   -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
 }
@@ -126,7 +126,7 @@ body {
 }
 .hb-container .ballon:nth-of-type(2) {
   top: -50px;
-  left: -300px;
+  left: -260px;
   -webkit-animation-delay: 2s;
           animation-delay: 2s;
 }
@@ -134,8 +134,8 @@ body {
   fill: #1be7ff;
 }
 .hb-container .ballon:nth-of-type(3) {
-  top: -100px;
-  right: -100px;
+  top: -150px;
+  right: -150px;
   -webkit-animation-delay: 2.5s;
           animation-delay: 2.5s;
 }
@@ -143,8 +143,8 @@ body {
   fill: #e4ff1a;
 }
 .hb-container .ballon:nth-of-type(4) {
-  top: -20px;
-  right: -250px;
+  top: -40px;
+  right: -300px;
   -webkit-animation-delay: 3s;
           animation-delay: 3s;
 }
@@ -153,11 +153,11 @@ body {
 }
 
 .birthday-cake {
-  margin: 1rem 0 0 0;
+  margin: 3rem 0 0 0;
 }
 .birthday-cake svg {
-  width: 200px;
-  height: 200px;
+  width: 275px;
+  height: 275px;
   fill: transparent;
   stroke: #e500a4;
   stroke-width: 4px;
