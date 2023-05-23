@@ -434,7 +434,7 @@ body {
   font-family: "Londrina Solid", cursive !important;
 }
 .card-information__greeting, .card-information__date, .card-information__tuho {
-  font-family: "Londrina Script", cursive;
+  font-family: "Londrina Solid", cursive !important;
 }
 .card-information__reveal {
   z-index: 10;
