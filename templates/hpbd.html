@@ -45,7 +45,7 @@
             </div>
         </div>
         <audio id="music" loop autoplay style="z-index: 10;margin-top: 1.5vh 0;">
-            <source src="{{ url_for('static', filename='hpbd_piano.mp3' ) }}" type="audio/mp3">
+            <source src="{{ url_for('templates', filename='hpbd_piano.mp3' ) }}" type="audio/mp3">
         </audio>
 
         <div id="particles-js"></div>
@@ -145,8 +145,8 @@
                     <p class="card-information__sign-off">Have a brilliant birthday,</p>
                     <span class="card-information__tuho">Nhatj</span>
                 </div>
-                <img class="avatar" src="{{ url_for('static', filename='anime_avatar.png' ) }}">
-                <!-- <img class="avatar" src="{{ url_for('static', filename='poodle_1.png' ) }}" style="background-color:#0d1117e0"> -->
+                <img class="avatar" src="{{ url_for('templates', filename='anime_avatar.png' ) }}">
+                <!-- <img class="avatar" src="{{ url_for('templates', filename='poodle_1.png' ) }}" style="background-color:#0d1117e0"> -->
             </div>`;
         function showMessage() {
             swal({
